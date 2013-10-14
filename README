@@ -1,16 +1,24 @@
 powerline
 
-This is the powerline module.
+This is the powerline module for installing Powerline.
+
+Powerline is a statusline plugin for vim, and provides statuslines and
+prompts for several other applications, including zsh, bash, tmux,
+IPython, Awesome and Qtile.
 
 License
 -------
+
+Apache License, Version 2.0.
 
 
 Contact
 -------
 
+Leon Brocard acme@astray.com
+
 
 Support
 -------
 
-Please log tickets and issues at our [Projects site](http://projects.example.com)
+Please log tickets and issues at [GitHub](https://github.com/acme/puppet-acme-powerline)
