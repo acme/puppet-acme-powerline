@@ -37,5 +37,23 @@
 #
 class powerline {
 
+  if(!defined(Package['python'])) {
+    package { 'python':
+      ensure => present,
+    }
+  }
+
+  if(!defined(Package['python-pip'])) {
+    package { 'python-pip':
+      ensure   => present,
+      require  => Package['python']
+    }
+  }
+
+  package { 'Powerline':
+    provider => 'pip',
+    source   => 'git+git://github.com/Lokaltog/powerline',
+    require  => Package['python-pip']
+  }
 
 }
