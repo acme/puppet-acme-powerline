@@ -17,6 +17,7 @@
 # === Examples
 #
 # class { 'powerline': }
+# powerline::install { 'acme': }
 #
 # === Authors
 #
@@ -27,6 +28,12 @@
 # Copyright 2013 Leon Brocard.
 #
 class powerline {
+
+  if(!defined(Package['curl'])) {
+    package { 'curl':
+      ensure => present,
+    }
+  }
 
   if(!defined(Package['python'])) {
     package { 'python':
