@@ -62,7 +62,7 @@ define powerline::install() {
   exec { 'powerline::fc-cache':
     command => "/usr/bin/fc-cache -vf /home/${name}/.fonts",
     user    => $name,
-    returns => 1,
+    returns => [1, 2, 3],
     unless  => '/usr/bin/fc-list | grep PowerlineSymbols 2>/dev/null',
     require => [Exec['powerline::PowerlineSymbols.otf'], Exec['powerline::10-powerline-symbols.conf']]
   }
